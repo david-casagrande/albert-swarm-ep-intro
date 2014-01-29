@@ -1,0 +1,35 @@
+{
+  "name": "albert-swarm-ep",
+  "version": "0.0.0",
+  "description": "'Albert Swarm EP'",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:david-casagrande/albert-swarm-ep-intro.git"
+  },
+  "author": "David Casagrande",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/david-casagrande/albert-swarm-ep-intro/issues"
+  },
+  "homepage": "https://github.com/david-casagrande/albert-swarm-ep-intro",
+
+  "devDependencies": {
+    "bower":                      "~1.2.8",
+    "express":                    "~3.4.7",
+
+    "gulp":                       "~3.2.2",
+    "gulp-concat":                "~2.1.6",
+    "gulp-es6-module-transpiler": "~0.1.0",
+    "gulp-jshint":                "git://github.com/wearefractal/gulp-jshint.git",
+    "gulp-nodemon":               "~0.1.1",
+    "gulp-sass":                  "~0.6.0",
+    "gulp-uglify":                "~0.1.0",
+    "path":                       "~0.4.9",
+    "reload":                     "~0.1.0"
+  }
+
+}
