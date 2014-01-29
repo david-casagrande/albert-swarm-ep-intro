@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<title>Albert Swarm</title>
+		<link rel="stylesheet" type="text/css" href="css/app.css" media="all">
+
+		<script type="text/javascript" src="/reload/reload.js"></script>
+		<script type="text/javascript" src="vendor/jQuery/jquery.js"></script>
+	</head>
+	<body>
+
+		<div id="drawing">
+			<img src="images/drawing.png" alt="Albert Swarm - EP" />
+		</div>
+
+		<div id="full-bar"></div>
+
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		<div class="items"></div>
+		
+		<script>
+			$('#drawing img').on('load', function(){
+				$('#drawing').addClass('show');
+			});
+		</script>
+
+	</body>
+</html>
