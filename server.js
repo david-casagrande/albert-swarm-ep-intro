@@ -10,7 +10,7 @@ app.configure(function(){
 });
 
 app.use(express.static(__dirname + '/app'));
-app.use("/vendor", express.static(__dirname + '/vendor'));
+//app.use("/vendor", express.static(__dirname + '/vendor'));
 
 var server = http.createServer(app);
 //reload(server, app);
