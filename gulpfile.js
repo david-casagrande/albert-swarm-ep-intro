@@ -6,15 +6,15 @@ var concat  = require('gulp-concat'),
 
 gulp.task('server', function(){
 	gulp.run('sass');
+  var port = gulp.env.port || 5000;
+  //console.log('gulp ' + port)
+  nodemon({ script: 'server.js', options: '-e js,html,css,scss --watch app' });
 
-  nodemon({ script: 'server.js', options: '-e js,html,css --watch app' });
-
-  gulp.watch('app/scss/app.scss', function(){
+  gulp.watch('app/scss/*.scss', function(){
 		gulp.run('sass');
   });
 
 });
-
 
 gulp.task('sass', function() {
   gulp.src('app/scss/app.scss')

@@ -31,10 +31,11 @@
     "gulp-concat":                "~2.1.6",
     "gulp-es6-module-transpiler": "~0.1.0",
     "gulp-jshint":                "git://github.com/wearefractal/gulp-jshint.git",
-    "gulp-nodemon":               "~0.1.1",
+    "gulp-nodemon":               "~0.1.2",
     "gulp-sass":                  "~0.6.0",
     "gulp-uglify":                "~0.1.0",
-    "path":                       "~0.4.9"
+    "path":                       "~0.4.9",
+    "nodemon":                    "~1.0.14"
   }
 
 }

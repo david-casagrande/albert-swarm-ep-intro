@@ -1,9 +1,10 @@
 @import 'reset';
-@import 'mixins';
+@import 'settings';
 
 body {
 	background: black;
 	@include absolute-full;
+	overflow: hidden;
 }
 
 #drawing {
@@ -12,35 +13,89 @@ body {
 	text-align: center;
 	opacity:0;
 	z-index: 2;
+	top:2.5%;
 
 	&.show {
 		opacity:1;
 	}
 
 	img {
-		height: 90%;
+		height: 95%;
 		width: auto;
-		margin-top: 2.5%;
 	}
 }
 
-
-$height: 47.5%;
-
 #full-bar {
-	width: 90%;
-	height: $height;
-	background: #b09917;
-	position: absolute;
-	left: 5%;
-	top: 25%;
-	z-index: 1;
+	@include bar-base;
+	.bar {
+		@include item-base;
+		height: $items-full-height * 10;
+		top:$top;
+	}
+}
+
+#bars {
+	@include bar-base;
 }
 
 .items {
-	height: $height/9;
-	width: 90%;
-	background: #b09917;
-	margin-bottom: 1%;
-	margin-left: 5%;
+	@include item-base;
+	@include transition(top 2s);
+	//@include transition(height 2s);
+	//-webkit-transition: height .5s, top 2s;
+  //transition:height .1s, top 2s;	
+
+	&.stop {
+		height: $items-height;
+	}
+}
+
+.item-1 {
+	top: $top;	
+	&.stop { top: 6.75%; }
+}
+
+.item-2 {
+	top: $top + $items-full-height;
+	&.stop { top: 17.5%; }
+}
+
+.item-3 {
+	top: $top + ($items-full-height*2);
+	&.stop { top: 26.75%; }
+}
+
+.item-4 {
+	top: $top + ($items-full-height*3);
+	&.stop { top: 34.5%; }		
+}
+
+.item-5 {
+	top: $top + ($items-full-height*4);
+	&.stop { top: 46.25%; }			
+}
+
+.item-6 {
+	top: $top + ($items-full-height*5);
+	&.stop { top: 55.5%; }			
+}
+
+.item-7 {
+	top: $top + ($items-full-height*6);
+	&.stop { top: 66%; }		
+}
+
+.item-8 {
+	top: $top + ($items-full-height*7);
+	&.stop { top: 76%; }		
+}
+
+.item-9 {
+	top: $top + ($items-full-height*8);
+	&.stop { top: 83.5%; }		
+}
+
+.item-10 {
+	top: $top + ($items-full-height*9);
+	&.stop { top: 95.25%; }		
 }
