@@ -1,0 +1,11 @@
+{
+  "restartable": "rs",
+  "verbose": false,
+  "watch": [
+    "app"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js html scss"
+}
