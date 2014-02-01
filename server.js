@@ -10,21 +10,18 @@ app.configure(function(){
   app.use(express.errorHandler());
 });
 
-if(env === 'production'){
-	app.use(express.static(__dirname + '/dist'));
-}
-else {
-	app.use(express.static(__dirname + '/app'));
-}
+
+var staticDir = (env === 'production') ? '/dist' : '/app'; 
+app.use(express.static(__dirname + staticDir));
+
 
 var server = http.createServer(app);
-
 if(env !== 'production'){
 	reload(server, app);
 }
 
+
 var port = Number(process.env.PORT || 8000);
-console.log(app.settings.env);
 server.listen(port, function(){
 	console.log('Server is now running on port '+ port);
 });

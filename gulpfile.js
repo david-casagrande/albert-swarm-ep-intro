@@ -4,18 +4,19 @@ var concat      = require('gulp-concat'),
     imagemin    = require('gulp-imagemin'),
 		minifyCSS   = require('gulp-minify-css'),
     nodemon     = require('nodemon'),
-    processhtml = require('gulp-processhtml')
+    processhtml = require('gulp-processhtml'),
 		sass        = require('gulp-sass');
-
 
 gulp.task('server', function(){
 	gulp.run('sass');
-  var port = gulp.env.port || 8000;
+  var port = gulp.env.port || 8000,
+      env  = gulp.env.production ? 'production' : 'development';
 
   nodemon({
     'script': 'server.js',
     'env': {
-      "PORT": port
+      'PORT':     port,
+      'NODE_ENV': env
     }
   });
 
@@ -35,18 +36,16 @@ gulp.task('sass', function() {
 gulp.task('dist', function() {
   gulp.src('app/css/*.css')
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/app'));
 
   gulp.src(['app/js/*.js', 'app/vendor/jquery/jquery.min.js'])
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/app'));
 
   gulp.src('app/index.html')
     .pipe(processhtml('index.html'))
     .pipe(gulp.dest('./dist'));
 
-/*
   gulp.src('app/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/images'));
-*/
 });
